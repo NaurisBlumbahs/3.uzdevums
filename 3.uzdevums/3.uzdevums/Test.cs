@@ -7,13 +7,30 @@ namespace _3.uzdevums
     {
         static void Main(string[] args)
         {
+
+            Phone();
+            Car();
+            Product();
+            Person();
+        }
+
+        static private void Phone()
+        {
             var phone = new Phone();
 
-            //phone.Mark = "Samsung";
-            //phone.Model = "S20+";
-            //phone.DimensionsLenght = 16;
-            //phone.DimensionsWidth = 7.5;
-            //phone.DimensionsHeight = 0.7;
+            Console.WriteLine("Uzdevums - Telefons");
+
+            //atkomentēt, lai pārbaudītu programmu ar šīm vērtībam
+            
+            phone.Mark = "Samsung";
+            phone.Model = "S20+";
+            phone.DimensionsLenght = 16;
+            phone.DimensionsWidth = 7.5;
+            phone.DimensionsHeight = 0.7;
+
+            //atkomentēt, lai pārbaudītu programmu ar šīm vērtībam
+
+            //atkomentēt, lai pārbaudītu programmu ar vērtībām kuras ievadi no konsoles
 
             //Console.WriteLine("Ievadi savu telefona ražotāju");
             //phone.Mark = Console.ReadLine();
@@ -33,45 +50,55 @@ namespace _3.uzdevums
             //double phoneHeight = double.Parse(phoneHeightText);
             //phone.DimensionsHeight = phoneHeight;
 
-            //Console.WriteLine($"Jūsu telefona ražotājs ir {phone.Mark} un modelis {phone.Model}");
-            //Console.WriteLine($"Jūsu telefona garums ir {phone.DimensionsLenght} cm, platums {phone.DimensionsWidth} cm, un augstums {phone.DimensionsHeight} cm");
+            //atkomentēt, lai pārbaudītu programmu ar vērtībām kuras ievadi no konsoles
 
-            //Console.WriteLine("Ievadi nummuru kam tu zvanīsi");
+            Console.WriteLine($"Jūsu telefona ražotājs ir {phone.Mark} un modelis {phone.Model}");
+            Console.WriteLine($"Jūsu telefona garums ir {phone.DimensionsLenght} cm, platums {phone.DimensionsWidth} cm, un augstums {phone.DimensionsHeight} cm");
 
-            //string numberToCallText = Console.ReadLine();
-            //int numberToCall = int.Parse(numberToCallText);
-            //phone.Call(numberToCall);
-            //string call = phone.Call(numberToCall);
-            //Console.WriteLine(call);
+            Console.WriteLine("Ievadi nummuru kam tu zvanīsi");
 
+            string numberToCallText = Console.ReadLine();
+            int numberToCall = int.Parse(numberToCallText);
+            phone.Call(numberToCall);
+            string call = phone.Call(numberToCall);
+            Console.WriteLine(call);
 
-            //Console.WriteLine("Ievadi nummuru un tekstu kam tu sūtīsi SMS");
+            Console.WriteLine("Ievadi tekstu ko sūtīsi SMS");
 
-            //string numberToSendSMSText = Console.ReadLine();
-            //int numberToSendSMS = int.Parse(numberToSendSMSText);
+            string textToSend = Console.ReadLine();
+            string sendSMS = phone.SendSMS(numberToCall, textToSend);
 
-            //string textToSend = Console.ReadLine();
-            //string sendSMS = phone.SendSMS(numberToSendSMS, textToSend);
-
-            //Console.WriteLine(sendSMS);
-
-            Car();
+            Console.WriteLine(sendSMS);
         }
 
-        static void Car()
+        static private void Car()
         {
             var car = new Car();
 
-            Console.WriteLine("Ievadi savu mašīnas ražotāju");
-            car.Mark = Console.ReadLine();
+            Console.WriteLine("Uzdevums - Mašīna");
 
-            Console.WriteLine("Ievadi savu mašīnas nummurzīmi");
-            car.PlateNr = Console.ReadLine();
+            //atkomentēt, lai pārbaudītu programmu ar šīm vērtībam
 
-            Console.WriteLine("Ievadi mašīnas maksimālo ātrumu");
-            string maxSpeedText = Console.ReadLine();
-            int maxSpeed = int.Parse(maxSpeedText);
-            car.Speed = maxSpeed;
+            car.Mark = "Renault";
+            car.PlateNr = "MM - 1234";
+            car.Speed = 200;
+
+            //atkomentēt, lai pārbaudītu programmu ar šīm vērtībam
+
+            //atkomentēt, lai pārbaudītu programmu ar vērtībām kuras ievadi no konsoles
+
+            //Console.WriteLine("Ievadi savu mašīnas ražotāju");
+            //car.Mark = Console.ReadLine();
+
+            //Console.WriteLine("Ievadi savu mašīnas nummurzīmi");
+            //car.PlateNr = Console.ReadLine();
+
+            //Console.WriteLine("Ievadi mašīnas maksimālo ātrumu");
+            //string maxSpeedText = Console.ReadLine();
+            //int maxSpeed = int.Parse(maxSpeedText);
+            //car.Speed = maxSpeed;
+
+            //atkomentēt, lai pārbaudītu programmu ar vērtībām kuras ievadi no konsoles
 
             Console.WriteLine($"Tu brauc ar {car.Mark}, nummurzīme {car.PlateNr} un maksimālais ātrums ir {car.Speed} km/h");
 
@@ -84,13 +111,47 @@ namespace _3.uzdevums
             Console.WriteLine($"{car.Mark} palielina ātrumu līdz {accelerateCar} km/h");
             Console.WriteLine(($"{car.Mark} samazina ātrumu līdz {stopDrive} km/h. {car.Mark} ir apstājies"));
             Console.WriteLine(honk);
-
-            
-
-
-
         }
 
+        static private void Product ()
+        {
+            // ievadīt preces garumu, platumu un augstumu
+            var product = new Product(4, 5, 6);
+            //atkomentēt, lai pārbaudītu programmu ar šīm vērtībam
+            product.Weight = 10;
+            //atkomentēt, lai pārbaudītu programmu ar šīm vērtībam
 
+            Console.WriteLine("Uzdevums - Prece");
+
+            //atkomentēt, lai pārbaudītu programmu ar vērtībām kuras ievadi no konsoles
+
+            //Console.WriteLine("Ievadiet preces svaru (kg)");
+            //string weightText = Console.ReadLine();
+            //double weight = double.Parse(weightText);
+            //product.Weight = weight;
+
+            //atkomentēt, lai pārbaudītu programmu ar vērtībām kuras ievadi no konsoles
+
+            string createProduct = product.CreateProduct();
+            Console.WriteLine(createProduct);
+            string showProductData = product.ShowProductData();
+            Console.WriteLine(showProductData);
+        }
+
+        static private void Person()
+        {
+            var person = new Person();
+
+            Console.WriteLine("Uzdevums - Persona");
+
+            person.FirstName = "Nauris";
+            person.LastName = "Blumbahs";
+            person.YearsOld = new (1994, 4, 14);
+            person.Hobby = "Spēlēju video spēles";
+            person.Gender = "Vīrietis";
+
+            string getGreeting = person.Greeting();
+            Console.WriteLine(getGreeting);
+        }
     }
 }
